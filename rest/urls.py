@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import InitAuth 
+from .views import InitAuth ,GetCalendarEvents
 
 urlpatterns = [
-    path('v1/calendar/init/', InitAuth.as_view(), name='google_permission'),
+    path('v1/calendar/init/', InitAuth.as_view(), name='init auth'),
+    path('v1/calendar/redirect/', GetCalendarEvents.as_view(), name='get events'),
 ]
